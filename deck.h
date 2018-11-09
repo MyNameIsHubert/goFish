@@ -28,9 +28,19 @@ public:
 
     Deck();           // pristine, sorted deck
 
-    void shuffle();   // shuffle the cards in the current deck
-    Card dealCard();   // get a card, after 52 are dealt, fail
+    //input param: N/A
+    //output: N/A
+    // shuffle the cards in the current deck
+    void shuffle();
 
+    //input param: N/A
+    //output: returns a card
+    // get a card, after 52 are dealt, fail
+    Card dealCard();
+
+    //input param: N/A
+    //output: size of deck
+    // return size of deck
     int size() const
     {
         return SIZE - myIndex;

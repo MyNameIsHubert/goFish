@@ -37,8 +37,14 @@ public:
 
     Card();          // default, ace of spades
 
+    //input param: int rank, suit s
+    //output: N/A
+    //constructs a card class
     Card(int rank, Suit s);
 
+    //input param: N/A
+    //output: a string
+    //converts a card to a string for printout
     string toString() const
     {
         string cardtype;
@@ -46,6 +52,10 @@ public:
         return cardtype;
     }// return string version e.g. Ac 4h Js
 
+
+    //input param: Card c
+    //output: bool t/f
+    //check if the suit of a card is the same;
     bool sameSuitAs(const Card& c) const
     {
         if( this->suitString(mySuit) == c.suitString(mySuit))
@@ -54,11 +64,17 @@ public:
             return false;
     }// true if suit same as c
 
+    //input param: N/A
+    //output: int rank
+    //returns rank of a card
     int  getRank()const
     {
         return myRank;
     }// return rank, 1..13
 
+    //input param: suit s
+    //output: string suitS
+    //returns a string representing the suit of the card
     string suitString(Suit s) const
     {
         if(s == spades)
@@ -71,6 +87,9 @@ public:
             return "d";
     }// return "s", "h",...
 
+    //input param: int ra
+    //output: string rank
+    //returns a string representing the rank of the card
     string rankString(int r) const
     {
          if(r == 1)
@@ -103,7 +122,9 @@ public:
     }// return "A", "2", ..."Q"
 
 
-
+    //  input param: card RHS
+    //  output: N/A
+    //  operators that check for equality and inequality
     bool operator == (const Card& rhs) const;
     bool operator != (const Card& rhs) const;
 

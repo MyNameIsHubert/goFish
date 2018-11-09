@@ -20,17 +20,25 @@ using namespace std;
 class Player
 {
 public:
-    Player();
+    Player();//default constructor
 
-    Player(string name) {
+    Player(string name) { //constructor with a name parameter to name a player
         myName = name;
     }
 
+    //input param: N/A
+    //output: N/A
+    //returns players name
     string getName() const {
         return myName;
     }
-
-    void addCard(Card c);//adds a card to the hand
+    //input param: N/A
+    //output: N/A
+    //adds card to players hand
+    void addCard(Card c);
+    //input param: N/A
+    //output: N/A
+    //adds card to players book
     void bookCards(Card c1, Card c2);
 
     //OPTIONAL
@@ -56,12 +64,18 @@ public:
 
     //uses some strategy to choose one card from the player's
     //hand so they can say "Do you have a 4?"
+    //input param: N/A
+    //output: a card
+    //returns the first card in the hand, to eliminate in order
     Card chooseCardFromHand() const
     {
         return myHand[0];
     }
 
     //Does the player have the card c in her hand?
+    //input param: card c
+    //output: a card
+    //returns a T/F to see if card is in hand or not
     bool cardInHand(Card c) const
     {
         for(int i=0; i<getHandSize(); i++){
@@ -73,6 +87,9 @@ public:
     }
 
     //Remove the card c from the hand and return it to the caller
+    //input param: card C
+    //output: a card
+    //returns the removed card from the hand
     Card removeCardFromHand(Card c)
     {
         Card temp, removed;
@@ -100,6 +117,9 @@ public:
 
     }
 
+    //input param: N/A
+    //output: a string of the hand
+    //returns a string spelling out all the cards in a players hand
     string showHand() const
     {
 
@@ -110,6 +130,9 @@ public:
 
         return hand;
     }
+    //input param: N/A
+    //output: a string of the book
+    //returns a string spelling out all the cards in a players book
     string showBooks() const
     {
         string book;
@@ -120,10 +143,16 @@ public:
         return book;
     }
 
+    //input param: N/A
+    //output: an int
+    //returns an int representing the size of a players hand
     int getHandSize() const
     {
         return myHand.size();
     }
+    //input param: N/A
+    //output: an int
+    //returns an int representing the size of a players book
     int getBookSize() const
     {
         return myBook.size();
